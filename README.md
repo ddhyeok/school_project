@@ -1,9 +1,9 @@
 ### school_project(파이썬 기반 딥러닝 코드 제출)
 
-#git-구강이미지
--method.py 파일에는 모델 학습, 검증, 시각화에 필요한 함수가 정의 되어있다
--Grad-CAM.py 파일에는 Grad-CAM이 구현되어있다.
--models 폴더에는 본 프로젝트에서 제안한 모델(CAE_v2, Classfier_v2)이 구현되어있다
+# git-구강이미지
+  -method.py 파일에는 모델 학습, 검증, 시각화에 필요한 함수가 정의 되어있다
+  -Grad-CAM.py 파일에는 Grad-CAM이 구현되어있다.
+  -models 폴더에는 본 프로젝트에서 제안한 모델(CAE_v2, Classfier_v2)이 구현되어있다
 
 -Data_preprocess_split.ipynb파일에서는 
 Data/image_train_front
