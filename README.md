@@ -1,5 +1,7 @@
 # school_project
 method.py 파일에는 모델 학습, 검증, 시각화에 필요한 함수가 정의 되어있다
+Grad-CAM.py 파일에는 Grad-CAM이 구현되어있다.
+
 
 Data_preprocess_split.ipynb파일에서는 
 Data/image_train_front
