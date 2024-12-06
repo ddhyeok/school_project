@@ -1,4 +1,5 @@
 
+* 데이터 출처 : <https://www.aihub.or.kr/aihubdata/data/view.do?currMenu=&topMenu=&aihubDataSe=data&dataSetSn=71688>
 
 
 ### school_project(파이썬 기반 딥러닝 코드 제출)
