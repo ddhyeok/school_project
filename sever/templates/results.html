@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" href="static/img/favicon.png" >
+    <title>ToothSCAN++</title>
+
+    
+    <style>
+
+        html {
+            box-sizing: border-box;
+            background-color: #B5D8E9;
+        }
+    
+        *, *::before, *::after {
+                box-sizing: inherit;
+        }
+
+        .content {
+                width: 80%; 
+                aspect-ratio: 5 / 3; 
+                background-color: #FFFFFF;
+                margin: auto; 
+                position: relative;
+
+                border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        }
+    
+
+        .image-top-left {
+            position: absolute;
+
+            top: 0px;
+            left: 0px;
+            width: 30%; 
+            max-width: 1000px; 
+            height: auto; 
+        }
+
+        .image-bottom-right {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            width: 25%; 
+            max-width: 1000px; 
+            height: auto; 
+        }
+        .image-top-right {
+            position: absolute;
+            top: 5%;
+            right: 15%;
+            width: 50%; 
+            max-width: 1000px; 
+            height: auto; 
+        }
+        .text-top-right {
+            position: absolute;
+            top: 5%;
+            right: 13%;
+            width: 50%; 
+            max-width: 1000px; 
+            height: auto; 
+            font-size: 2vw
+        }
+
+
+        .container {
+            position: absolute;
+            top: 65%; 
+            left: 38%; 
+            transform: translate(-50%, -50%); 
+            width: 70%; 
+            max-width: 1200px;
+            height: 60%;
+            background-color: black; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            background-color: #D3D3D3; 
+            border: 8px solid #000000; 
+            overflow: hidden;
+        }
+
+
+        .container_img{
+
+            position: relative;
+            width: 98%;
+            height: 98%;
+
+        }
+        .container_img img{
+
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+         .outter_img{
+            opacity: 1; 
+            z-index: 2;
+        }
+
+         .inner_img{
+            opacity: 0; 
+            z-index: 1;
+        }
+        .container .container_img:hover .inner_img{
+            clip-path: circle(0px at 50% 50%); 
+            transition: clip-path 0.1s ease-out;
+            opacity: 1;
+        }
+        
+	</style>
+    
+
+
+</head>
+
+<body>​
+
+   
+    <div class="content">
+
+        <img src="static/img/logo.png" alt="" data-lazyload="static/img/doctor.png"class="image-top-left">        
+        <img src="static/img/doctor.png" alt="" data-lazyload="static/img/doctor.png"class="image-bottom-right">
+        <img src="static/img/text_b.png" alt="" data-lazyload="static/img/doctor.png"class="image-top-right">
+
+
+		<form method="GET" action="/">
+
+        {% if RESULT_PRED > 50 %}
+            <h1 class="text-top-right">
+                유감입니다!</br>
+                약 {{RESULT_PRED}}%확률 충치가 존재해요! </br>
+			    <input type="submit" value="돌아가기">
+            </h1>
+                
+            <div class="container">
+                <div class="container_img" id="container_img">
+                    <img src="static/input.png"   >
+                
+                    <img src="static/result.png"   class='inner_img' id='inner_img'>
+                </div>
+            </div>
+
+        {% else  %}
+            <h1 class="text-top-right">
+                축하합니다!</br>
+                약 {{100-RESULT_PRED}}%확률 건강한 치아예요! </br>
+                <input type="submit" value="돌아가기">
+            </h1>
+            <div class="container">
+                <div class="container_img" >
+ 
+                <img src="static/img/good_result.png">
+                
+                </div>
+            </div>
+
+        {% endif %}
+
+	    </form>
+       
+
+
+        </div>
+
+​
+<script>
+    const container = document.getElementById('container_img');
+    const bottomImage = document.getElementById('inner_img');
+
+    container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const radius = Math.min(rect.width, rect.height) * 0.35;
+
+        bottomImage.style.clipPath = `circle(${radius}px at ${x}px ${y}px)`;
+    });
+
+    container.addEventListener('mouseleave', () => {
+        bottomImage.style.clipPath = `circle(0px at 50% 50%)`;
+    });
+</script>
+    
+
+</body>
+
+</html>
+

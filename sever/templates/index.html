@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" href="static/img/favicon.png" >
+    <title>ToothSCAN++</title>
+
+    
+    <style>
+
+        html {
+            box-sizing: border-box;
+            background-color: #B5D8E9;
+        }
+    
+        *, *::before, *::after {
+                box-sizing: inherit;
+        }
+
+        .content {
+                width: 80%; 
+                aspect-ratio: 5 / 3; 
+                background-color: #FFFFFF;
+                margin: auto; 
+                position: relative;
+
+                border: 1px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+        }
+    
+
+        .image-top-left {
+            position: absolute;
+
+            top: 0px;
+            left: 0px;
+            width: 30%; 
+            max-width: 1000px; 
+            height: auto; 
+        }
+
+        .image-bottom-right {
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            width: 25%; 
+            max-width: 1000px; 
+            height: auto; 
+        }
+        .image-top-right {
+            position: absolute;
+            top: 5%;
+            right: 15%;
+            width: 50%; 
+            max-width: 1000px; 
+            height: auto; 
+        }
+        .text-top-right {
+            position: absolute;
+            top: 10%;
+            right: 13%;
+            width: 50%; 
+            max-width: 1000px; 
+            height: auto; 
+            font-size: 2vw
+        }
+
+
+        .container {
+            position: absolute;
+            top: 65%; 
+            left: 38%; 
+            transform: translate(-50%, -50%); 
+            width: 70%; 
+            max-width: 1200px;
+            height: 60%;
+            background-color: black; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            background-color: #D3D3D3; 
+            border: 8px solid #000000; 
+        }
+	</style>
+    
+
+
+</head>
+
+<body>​
+
+   
+    <div class="content">
+
+        <img src="static/img/logo.png" alt="" data-lazyload="static/img/doctor.png"class="image-top-left">        
+        <img src="static/img/doctor.png" alt="" data-lazyload="static/img/doctor.png"class="image-bottom-right">
+        <img src="static/img/text_b.png" alt="" data-lazyload="static/img/doctor.png"class="image-top-right">
+
+
+
+		<form method="POST" action="/process" enctype="multipart/form-data">
+
+        <input type="file" name="image" accept="image/*" required value="none" alt = "진단이 필요한 구강 이미지를 입력해주세요!" class="container">
+
+        <h1 class="text-top-right">진료가 필요한 구강사진을 입력해주세요! 
+			<input type="submit" value="검사하기">
+
+        </h1>
+
+	    </form>
+       
+
+
+        </div>
+
+​
+
+    
+
+</body>
+
+</html>
+
