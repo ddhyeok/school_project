@@ -42,9 +42,9 @@ front 구강 이미지 데이터
       - save_images_with_names  :폴더로 저장
       - create_dataset          :전처리된 이미지를 split하여 output_dataset 생성
   
-    - Data/image_train_front,Data/label_train_front 폴더에 들어있는 원천데이터를 전처리한다.
+    - Data/image_train_front, Data/label_train_front 폴더에 들어있는 원천데이터를 전처리한다.
     
-    - Data/image_preprocessed_0,Data/image_preprocessed_1 폴더에 전처리된 이미지를 저정한다.
+    - Data/image_preprocessed_0, Data/image_preprocessed_1 폴더에 전처리된 이미지를 저정한다.
     
     - data를 split 하여 output_dataset 폴더 안에 저장한다. (각 데이터 셋의 클래스 비는 73.1(음성):26.9(양성)로 동일하다)
       
