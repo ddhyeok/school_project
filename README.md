@@ -41,7 +41,8 @@ front 구강 이미지 데이터
       - load_label_from_folder  :json파일로 부터 충치 여부 라벨 추출
       - save_images_with_names  :폴더로 저장
       - create_dataset          :전처리된 이미지를 split하여 output_dataset 생성
-  
+
+    - 과정  
     - Data/image_train_front, Data/label_train_front 폴더에 들어있는 원천데이터를 전처리한다.
     
     - Data/image_preprocessed_0, Data/image_preprocessed_1 폴더에 전처리된 이미지를 저정한다.
