@@ -66,7 +66,7 @@ front 구강 이미지 데이터
 
   - model_train.ipynb 파일에는 제안된 모델을 학습시키고 저장한다.
     - 학습된 모델과 train, validation LOSS는 model_save폴더에 저장된다.
-    - RB-AE train, validation loss(MSE) with train dataset
+    - RB-AE train, validation loss(MSE) 
     <img src=https://github.com/user-attachments/assets/5ca435f6-d5a5-4a5c-a475-0bb7a4d8d110 width="300" height="150">
 
   - results.ipynb 파일에선 model_save폴더에 비교군 모델들과 제안할 모델을 load해 여러 평가지표를 계산하고 시각화한다. 그후 제안될 모델에 Grad-CAM을 적용시켜 시각화한다.
