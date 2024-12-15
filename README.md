@@ -77,7 +77,7 @@ front 구강 이미지 데이터
 
 
 # sever
-
+  - 제안된 모델을 통해 ToothSCAN+ 서비스 배포
   - Flask를 통한 간단한 웹서비스 구현
   - models 사용할 모델 구현 파일
     
